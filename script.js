@@ -1,12 +1,15 @@
 class Client {
   constructor(name, surname, birthday, balance, account_number) {
-    (this.name = name),
+      (this.name = name),
       (this.surname = surname),
       (this.birthday = birthday),
       (this.balance = balance),
       (this.account_number = account_number);
   }
 }
+let table = document.getElementById("table");
+let bouton = document.createElement("button");
+let newContent = document.createTextNode("MORE INFO");
 
 let client1 = new Client("Efosa", "Omorodion", 1998, 50, 150150255);
 let client2 = new Client("Samir", "Santana", 1990, 60, 10015011);
@@ -31,3 +34,24 @@ console.log(
   client9,
   client10
 );
+
+let clients =[ client1,
+  client2,
+  client3,
+  client4,
+  client5,
+  client6,
+  client7,
+  client8,
+  client9,
+  client10]
+
+
+for(let i = 0; i <clients.length; i++){
+  table.innerHTML += '<td>'+ clients[i].name + '</td>'  + '<td>' + clients[i].surname ;
+}
+
+/* 
++ '</td>' + '<tr>' + clients[i].birthday + '</tr>'
+   +  clients[i].balance + '</tr>' + '<tr>' + clients[i].account_number + '</tr>' ;
+*/
